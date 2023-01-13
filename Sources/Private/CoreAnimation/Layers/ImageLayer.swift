@@ -48,6 +48,7 @@ final class ImageLayer: BaseCompositionLayer {
 
     self.imageAsset = imageAsset
     contents = image
+    contentsGravity = .resizeAspectFill
     setNeedsLayout()
   }
 
