@@ -17,7 +17,7 @@ final class ImageCompositionLayer: CompositionLayer {
     imageReferenceID = imageLayer.referenceID
     super.init(layer: imageLayer, size: size)
     contentsLayer.masksToBounds = true
-    contentsLayer.contentsGravity = CALayerContentsGravity.resize
+    contentsLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
   }
 
   override init(layer: Any) {
@@ -42,6 +42,7 @@ final class ImageCompositionLayer: CompositionLayer {
     didSet {
       if let image = image {
         contentsLayer.contents = image
+        contentsLayer.contentsGravity = .resizeAspectFill
       } else {
         contentsLayer.contents = nil
       }
